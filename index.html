@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090a"><meta name="description" content="游離 AFTERFLOW — 以字元塵埃呈現螢幕行為留下的數位痕跡，一件生成式互動藝術作品。">
+<title>游離 AFTERFLOW · 生成式互動藝術</title>
+<style>
+:root{color-scheme:dark;--white:#e7e8e8;--muted:#85888c;--line:#ffffff24}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#08090a;color:var(--white)}body{font-family:Arial,"PingFang TC","Microsoft JhengHei",sans-serif;font-weight:400}button,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visible,input:focus-visible,a:focus-visible{outline:1px solid white;outline-offset:6px}button{border:0;background:transparent}#field{position:absolute;inset:0;width:100%;height:100%;touch-action:none}.vignette{position:fixed;inset:0;pointer-events:none;background:linear-gradient(90deg,#08090a77,transparent 55%),radial-gradient(ellipse at 58% 50%,transparent 25%,#08090a44 100%)}header{position:absolute;top:0;left:0;width:100%;padding:32px 40px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}.brand{display:flex;align-items:center;gap:13px;font-size:13px;letter-spacing:3px}.mark{width:22px;height:22px;position:relative;display:inline-block}.mark:before,.mark:after{content:"";position:absolute;left:10px;top:0;height:22px;width:1px;background:#b7babc;transform:rotate(35deg)}.mark:after{transform:rotate(-35deg)}.brand small{font-size:10px;color:#8c9094;letter-spacing:2px;margin-left:5px}nav{display:flex;gap:28px;align-items:center;pointer-events:auto}nav button{font-size:11px;color:#b4b6b8;padding:8px 0;letter-spacing:1px}nav button:hover{color:white}.fullscreen{font-size:20px;line-height:15px}.intro{position:absolute;left:7.3%;top:30%;pointer-events:none}.eyebrow{font-family:monospace;font-size:10px;letter-spacing:2px;color:#969a9d;display:flex;gap:10px;align-items:center}.dot{width:4px;height:4px;background:#bfc3c5;border-radius:100%;box-shadow:0 0 8px #ffffff77}h1{font-weight:300;font-size:clamp(62px,7.2vw,112px);letter-spacing:.16em;line-height:1.05;margin:28px 0 16px}h1 span{display:block;font-family:Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:.7em;margin:23px 0 0 5px;color:#c2c5c7}.poem{color:#a3a6aa;line-height:2.1;font-size:12px;letter-spacing:2px;margin-top:37px}.edition{position:absolute;right:40px;top:50%;writing-mode:vertical-rl;font:9px monospace;letter-spacing:2px;color:#74787c}.center-note{position:absolute;left:64%;top:77%;transform:translateX(-50%);font-size:10px;letter-spacing:3px;color:#8a8e91;pointer-events:none;white-space:nowrap}.center-note:before{content:"+";display:block;text-align:center;font-size:19px;font-weight:200;margin-bottom:13px;color:#bec1c2}.bottom{position:absolute;bottom:0;left:0;width:100%;padding:0 40px 24px;pointer-events:none}.interaction{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-bottom:22px;font-size:10px;letter-spacing:1px;color:#8c9093}.interaction span{display:flex;gap:8px;align-items:center}.interaction i{font-style:normal;color:#e0e1e2;font-size:14px}.bar{border-top:1px solid var(--line);padding-top:19px;display:flex;align-items:center;justify-content:space-between;gap:20px}.status{display:flex;gap:17px;align-items:center;font:9px monospace;letter-spacing:1px;color:#777d81}.status strong{font-weight:400;color:#bdc3c5}.controls{display:flex;align-items:center;gap:23px;pointer-events:auto}.controls button{font-size:10px;letter-spacing:1px;color:#b8bec1;padding:4px 0}.controls button:hover{color:white}.density{display:flex;align-items:center;gap:12px;color:#8d9397;font-size:10px;letter-spacing:1px}input[type=range]{width:75px;height:12px;accent-color:#b4b8ba;cursor:pointer}.sep{height:13px;border-left:1px solid var(--line)}.signature{font:9px monospace;color:#656b70;letter-spacing:1px}.cursor{position:fixed;width:30px;height:30px;border:1px solid #ffffff38;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);display:none;transition:width .2s,height .2s;z-index:2}.toast{position:fixed;left:50%;top:100px;transform:translateX(-50%);padding:10px 18px;background:#16191cea;color:#c4c8cb;font-size:11px;border:1px solid #ffffff22;opacity:0;transition:opacity .3s;pointer-events:none;z-index:8}.toast.show{opacity:1}dialog{color:var(--white);background:#101214f5;border:1px solid #ffffff30;width:min(540px,calc(100% - 40px));padding:45px;max-height:85dvh;overflow:auto}dialog::backdrop{background:#000a;backdrop-filter:blur(12px)}dialog h2{font-size:31px;font-weight:300;letter-spacing:5px;margin:20px 0 25px}dialog p{font-size:12px;line-height:2.2;color:#a8aeb2;letter-spacing:1px}dialog .close{position:absolute;right:20px;top:15px;font-size:22px;color:#9da3a6}dialog .foot{border-top:1px solid var(--line);padding-top:18px;margin-top:26px;font:10px monospace;color:#777e83;line-height:2}body.immersive header,body.immersive .intro,body.immersive .bottom,body.immersive .edition,body.immersive .center-note{opacity:0;pointer-events:none}body.immersive .controls,body.immersive nav{pointer-events:none}.exit-immersive{display:none;position:fixed;right:26px;top:24px;font-size:11px;color:#a5aaae;padding:10px;border:1px solid #ffffff25}body.immersive .exit-immersive{display:block}header,.intro,.bottom,.edition,.center-note{transition:opacity .7s} @media(max-width:700px){header{padding:24px}.brand small{display:none}nav{gap:14px}nav button{font-size:10px}.intro{left:8%;top:23%}h1{font-size:70px}.poem{font-size:11px;margin-top:26px}.eyebrow{font-size:8px;letter-spacing:1px}.edition{right:18px;font-size:8px}.bottom{padding:0 24px 23px}.signature{display:none}.bar{flex-wrap:wrap;gap:20px}.controls{width:100%;justify-content:space-between;gap:12px}.interaction{gap:15px;font-size:9px}.center-note{left:64%;top:69%;font-size:9px}.status{font-size:8px}.density{gap:6px}input[type=range]{width:58px}dialog{padding:30px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="field" aria-label="字元塵埃互動畫布。向左移動聚流，向右移動散流；移動游標擾動，點擊觸發爆散，滾動卷起資訊流。按空格暫停，按 H 切換沉浸模式，按 F 進入全螢幕。" tabindex="0"></canvas>
+<div class="vignette"></div>
+<header><div class="brand"><span class="mark" aria-hidden="true"></span>游離 <small>AFTERFLOW</small></div><nav><button id="about">作品說明 ↗</button><button id="fullscreen" aria-label="進入全螢幕" title="全螢幕 F">⛶ 全螢幕</button><button id="immerse" aria-label="進入沉浸模式" title="沉浸模式 H">◌ 沉浸</button></nav></header>
+<main class="intro"><div class="eyebrow"><span class="dot"></span> GENERATIVE INTERACTIVE ART / 001</div><h1>游離<span>AFTERFLOW</span></h1><p class="poem">每一次游移，<br>都讓不可見的資訊有了形狀。<br>而後，歸於無聲。</p></main>
+<div class="edition">EPHEMERAL SIGNALS — AN ONGOING DISSOLUTION</div>
+<div class="center-note" id="hint">移動游標，讓痕跡發生</div>
+<footer class="bottom"><div class="interaction"><span id="flow" data-direction="idle"><i>↔</i> 左聚 · 右散</span><span><i>↗</i> 懸停 · 擾動</span><span><i>⊕</i> 點擊 · 爆散</span><span><i>↕</i> 滾動 · 湧流</span></div><div class="bar"><div class="status"><span class="dot" id="liveDot"></span><strong id="state">SIGNAL ACTIVE</strong><span id="elapsed">00:00:00</span><span id="trace">TRACES 0000</span></div><div class="controls"><label class="density">塵埃密度<input id="density" type="range" min="20" max="100" value="65" aria-label="塵埃密度"></label><span class="sep"></span><button id="pause">Ⅱ 暫停</button><button id="clear">↺ 重置</button><button id="save">↓ 留存</button></div><div class="signature">NOTHING STAYS. EVERYTHING LEAVES.</div></div></footer>
+<button class="exit-immersive" id="exit">退出觀看 ↗</button><div class="cursor" id="cursor"></div><div class="toast" role="status" id="toast"></div>
+<dialog id="statement"><button class="close" id="close" aria-label="關閉作品說明">×</button><div class="eyebrow">ABOUT THE WORK / 作品說明</div><h2>不可見的，正在發生。</h2><p>「游離」是一件生成式互動藝術作品。它將字元化為塵埃，通過分組放射線簇演算法，在黑色空間中不斷生成、擴散與消散。</p><p>向左移動，字元被牽引並收束為細流；向右移動，字元向外展開成扇形。滑動越快，流場越強；停下後，擾動逐漸消退。懸停帶來排斥與偏移；點擊引發一次放射性的爆散；滾動讓流場短暫地卷動。日常螢幕行為，成為這片數位空間的微小氣候。</p><p>這裡沒有等待解讀的結構化數據，只有轉瞬即逝的符號、被擾動的軌跡，以及疊加後逐漸稀薄的透明度。資訊觸發、擴散、消散，在你的參與中反覆發生。</p><p>當螢幕恢復平靜，我們是否仍能感知，那些持續無序的資訊溢散？</p><div class="foot">操作：向左聚流 / 向右散流 / 點擊爆散 / 滾動湧流<br>觸控螢幕：左右拖動 / 輕觸<br>快捷鍵：SPACE 暫停 · F 全螢幕 · H 沉浸 · ESC 退出全螢幕 / 沉浸<br>留存：保存當前字元場 PNG 圖像<br>所有痕跡僅存在於當前畫面，不採集或上傳互動數據。</div></dialog>
+<script>
+(()=>{'use strict';
+const canvas=document.querySelector('#field'),ctx=canvas.getContext('2d',{alpha:false});
+const $=s=>document.querySelector(s),rand=(a,b)=>a+Math.random()*(b-a),TAU=Math.PI*2;
+const chars='01:/·+−<>[]{}░∴∵≋゠アイウエオ流跡塵資訊';
+let W=0,H=0,dpr=1,particles=[],rays=[],rings=[],time=0,last=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches,density=.65,trace=0,emission=0,scrollForce=0,lastMove=0,clockAccum=0;
+const pointer={x:-9999,y:-9999,active:false,sweep:0,sampleTime:0,emitTime:0};
+let flowDirection='idle';
+function setFlowDirection(direction){if(flowDirection===direction)return;flowDirection=direction;$('#flow').dataset.direction=direction;$('#flow').innerHTML=direction==='left'?'<i>←</i> 聚流 · 收束':direction==='right'?'<i>→</i> 散流 · 展開':'<i>↔</i> 左聚 · 右散'}
+// Signed horizontal movement creates two different local flow fields.
+function horizontalAcceleration(dx,dy,sweep){
+ const reach=260,distance=Math.hypot(dx,dy);
+ if(distance>=reach||Math.abs(sweep)<.015)return {x:0,y:0,weight:0};
+ const weight=Math.pow(1-distance/reach,1.5),strength=Math.abs(sweep)*580*weight;
+ return {x:Math.sign(sweep)*strength,y:(sweep<0?-1:1)*(dy/reach)*strength*2.8,weight};
+}
+function stopPointer(){pointer.active=false;pointer.sweep=0;pointer.sampleTime=0;setFlowDirection('idle');$('#cursor').style.display='none'}
+function targetCount(){return Math.round((W<700?1250:2400)*density)}
+function makeRays(){rays=[];const cx=W*(W<700?.59:.63),cy=H*.47;for(let g=0;g<15;g++){const angle=rand(0,TAU),ox=cx+rand(-W*.10,W*.10),oy=cy+rand(-H*.12,H*.12);for(let j=0;j<11;j++)rays.push({x:ox,y:oy,a:angle+rand(-.15,.15),len:rand(80,Math.min(W,H)*.55),bend:rand(-.24,.24)})}}
+function spawn(initial=false,x,y,burst=false){let r=rays[Math.floor(Math.random()*rays.length)];const a=burst?rand(0,TAU):r.a,dist=initial?rand(0,r.len):rand(0,12),life=rand(4,13);return {x:burst?x:r.x+Math.cos(a)*dist,y:burst?y:r.y+Math.sin(a)*dist,vx:Math.cos(a)*(burst?rand(40,200):rand(5,19)),vy:Math.sin(a)*(burst?rand(40,200):rand(5,19)),age:initial?rand(0,life*.85):0,life,a,spin:r.bend,size:rand(7,11),alpha:rand(.17,.66),glyph:chars[Math.floor(Math.random()*chars.length)],trail:rand(.3,1),burst}}
+function reset(){stopPointer();makeRays();particles=Array.from({length:targetCount()},()=>spawn(true));rings=[];trace=0;time=0;clockAccum=0;scrollForce=0;emission=0;ctx.fillStyle='#08090a';ctx.fillRect(0,0,W,H);updateStats()}
+function resize(){W=innerWidth;H=innerHeight;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);reset();if(paused)render(0)}
+function updateStats(){let s=Math.floor(time);$('#elapsed').textContent=[Math.floor(s/3600),Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':');$('#trace').textContent='TRACES '+String(trace).padStart(4,'0');$('#state').textContent=paused?'SIGNAL SUSPENDED':'SIGNAL ACTIVE';$('#pause').textContent=paused?'▷ 繼續':'Ⅱ 暫停';$('#liveDot').style.opacity=paused?.25:1}
+function render(dt){ctx.fillStyle='rgba(8,9,10,0.24)';ctx.fillRect(0,0,W,H);scrollForce*=Math.exp(-dt*2);pointer.sweep*=Math.exp(-dt*3.8);if(Math.abs(pointer.sweep)<.04)setFlowDirection('idle');const max=targetCount();if(!paused){emission+=dt*max/8;while(emission>=1){particles.push(spawn());emission--}if(particles.length>max+500)particles.splice(0,particles.length-max-500)}
+for(let i=particles.length-1;i>=0;i--){const p=particles[i];if(!paused){p.age+=dt;if(p.age>=p.life||p.x<-100||p.x>W+100||p.y<-100||p.y>H+100){particles.splice(i,1);continue}const dx=p.x-pointer.x,dy=p.y-pointer.y,dist=Math.hypot(dx,dy);if(pointer.active&&dist<125&&dist>1){const force=(1-dist/125)*190*dt;p.vx+=dx/dist*force;p.vy+=dy/dist*force}if(pointer.active){const flow=horizontalAcceleration(dx,dy,pointer.sweep);p.vx+=flow.x*dt;p.vy+=flow.y*dt;if(pointer.sweep<0)p.vy*=Math.exp(-dt*flow.weight*Math.abs(pointer.sweep)*3)}const speed=Math.hypot(p.vx,p.vy);if(speed>420){p.vx*=420/speed;p.vy*=420/speed}p.vx+=Math.cos(p.a+Math.PI/2)*p.spin*dt*3;p.vy+=Math.sin(p.a+Math.PI/2)*p.spin*dt*3;p.vy+=scrollForce*dt;p.vx*=Math.exp(-dt*.12);p.vy*=Math.exp(-dt*.12);p.x+=p.vx*dt;p.y+=p.vy*dt}
+const fade=Math.min(1,p.age/.7)*Math.pow(Math.max(0,1-p.age/p.life),1.3),a=p.alpha*fade;
+ctx.strokeStyle=`rgba(189,199,204,${a*.42})`;ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x-p.vx*p.trail*.9,p.y-p.vy*p.trail*.9);ctx.stroke();ctx.fillStyle=`rgba(215,221,225,${a})`;ctx.font=`${p.size}px "SFMono-Regular",Consolas,monospace`;ctx.fillText(p.glyph,p.x,p.y)}
+for(let i=rings.length-1;i>=0;i--){let r=rings[i];if(!paused)r.age+=dt;if(r.age>1.7){rings.splice(i,1);continue}ctx.beginPath();ctx.arc(r.x,r.y,10+r.age*100,0,TAU);ctx.strokeStyle=`rgba(210,220,225,${(1-r.age/1.7)*.25})`;ctx.lineWidth=.6;ctx.stroke()}}
+function frame(now){const dt=Math.min((now-(last||now))/1000,.045);last=now;if(!paused){time+=dt;render(dt);clockAccum+=dt;if(clockAccum>.25){updateStats();clockAccum=0}}requestAnimationFrame(frame)}
+function toast(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('show'),2200)}
+function burst(x,y){if(paused){toast('畫面已暫停，點擊「繼續」喚醒塵埃');return}for(let i=0;i<150;i++)particles.push(spawn(false,x,y,true));rings.push({x,y,age:0});trace++;updateStats();$('#hint').textContent='痕跡正在消散';clearTimeout(burst.timer);burst.timer=setTimeout(()=>$('#hint').textContent='移動游標，讓痕跡發生',3000)}
+canvas.addEventListener('pointermove',e=>{
+ const now=performance.now(),oldX=pointer.x,oldY=pointer.y,elapsed=now-pointer.sampleTime,dx=e.clientX-oldX;
+ if(!paused&&pointer.active&&pointer.sampleTime&&elapsed<180&&Math.abs(dx)>1.2){
+  const speed=Math.max(-1,Math.min(1,dx/Math.max(elapsed,8)*.85));
+  pointer.sweep=pointer.sweep*.22+speed*.78;
+  if(Math.abs(pointer.sweep)>.055)setFlowDirection(pointer.sweep<0?'left':'right');
+  if(Math.abs(pointer.sweep)>.12&&now-pointer.emitTime>45){
+   const count=Math.min(18,Math.max(3,Math.round(Math.abs(dx)*.22)));
+   for(let i=0;i<count;i++){
+    const t=(i+.5)/count,x=oldX+dx*t,y=oldY+(e.clientY-oldY)*t,p=spawn(false,x,y,true),spread=pointer.sweep<0?rand(-.10,.10):rand(-1.05,1.05);
+    p.vx=Math.sign(pointer.sweep)*rand(65,170)*Math.cos(spread);p.vy=Math.sin(spread)*rand(50,170);p.life=rand(2.5,5);p.alpha=rand(.4,.75);particles.push(p);
+   }
+   pointer.emitTime=now;
+  }
+ }
+ pointer.x=e.clientX;pointer.y=e.clientY;pointer.active=true;pointer.sampleTime=now;
+ if(e.pointerType==='mouse'){$('#cursor').style.display='block';$('#cursor').style.left=e.clientX+'px';$('#cursor').style.top=e.clientY+'px'}
+ if(!paused&&now-lastMove>160){trace++;lastMove=now}
+});
+canvas.addEventListener('pointerleave',stopPointer);
+canvas.addEventListener('pointerdown',e=>{pointer.x=e.clientX;pointer.y=e.clientY;pointer.active=true;pointer.sampleTime=performance.now();pointer.sweep=0;burst(e.clientX,e.clientY)});
+canvas.addEventListener('pointerup',e=>{if(e.pointerType!=='mouse')stopPointer()});canvas.addEventListener('pointercancel',stopPointer);
+canvas.addEventListener('wheel',e=>{e.preventDefault();if(!paused){scrollForce+=Math.sign(e.deltaY)*Math.min(Math.abs(e.deltaY),100)*1.2;scrollForce=Math.max(-260,Math.min(260,scrollForce));trace++;}},{passive:false});
+function togglePause(){paused=!paused;stopPointer();updateStats()}function immersive(on){document.body.classList.toggle('immersive',on)}
+$('#pause').onclick=togglePause;$('#clear').onclick=()=>{reset();if(paused)render(0);toast('痕跡已重置')};$('#density').oninput=e=>{density=+e.target.value/100;let n=targetCount();if(particles.length>n)particles.length=n;else while(particles.length<n)particles.push(spawn(true));if(paused)render(0)};
+
+let fullscreenImmersive=false;
+function fullscreenElement(){return document.fullscreenElement||document.webkitFullscreenElement}
+function syncFullscreen(){const active=!!fullscreenElement();$('#fullscreen').textContent=active?'⛶ 退出全螢幕':'⛶ 全螢幕';$('#fullscreen').setAttribute('aria-label',active?'退出全螢幕':'進入全螢幕');if(!active&&fullscreenImmersive){fullscreenImmersive=false;immersive(false)}}
+async function toggleFullscreen(){
+ try{
+  if(fullscreenElement()){const leave=document.exitFullscreen||document.webkitExitFullscreen;if(leave)await leave.call(document);return}
+  const root=document.documentElement,enter=root.requestFullscreen||root.webkitRequestFullscreen;
+  if(!enter){toast('此瀏覽器不支援網頁全螢幕，請使用瀏覽器的全螢幕選單');return}
+  await enter.call(root);fullscreenImmersive=true;immersive(true);syncFullscreen();
+ }catch(error){toast('無法進入全螢幕，請在獨立瀏覽器中開啟作品後再試')}
+}
+async function exitViewing(){if(fullscreenElement()){await toggleFullscreen()}else immersive(false)}
+document.addEventListener('fullscreenchange',syncFullscreen);document.addEventListener('webkitfullscreenchange',syncFullscreen);
+$('#fullscreen').onclick=toggleFullscreen;
+$('#immerse').onclick=()=>immersive(true);$('#exit').onclick=exitViewing;$('#about').onclick=()=>$('#statement').showModal();$('#close').onclick=()=>$('#statement').close();$('#statement').addEventListener('click',e=>{if(e.target===$('#statement')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close()}});
+$('#save').onclick=()=>{const out=document.createElement('canvas');out.width=canvas.width;out.height=canvas.height;const c=out.getContext('2d');c.drawImage(canvas,0,0);c.fillStyle='#bdc3c6';c.font=`${12*dpr}px monospace`;c.fillText('AFTERFLOW / 游離',30*dpr,out.height-30*dpr);out.toBlob(blob=>{if(!blob){toast('保存失敗，請稍後重試');return}const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='afterflow-'+Date.now()+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);toast('此刻的痕跡已留存')},'image/png')};
+window.addEventListener('keydown',e=>{if(e.repeat||$('#statement').open||/INPUT|TEXTAREA/.test(document.activeElement.tagName))return;if(e.code==='Space'&&document.activeElement.tagName!=='BUTTON'){e.preventDefault();togglePause()}if(e.key.toLowerCase()==='f'){e.preventDefault();toggleFullscreen()}if(e.key.toLowerCase()==='h')immersive(!document.body.classList.contains('immersive'));if(e.key==='Escape'&&!fullscreenElement())immersive(false)});
+let resizeTimer;addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(resize,150)});document.addEventListener('visibilitychange',()=>{last=0;stopPointer()});resize();updateStats();requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
